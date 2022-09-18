@@ -1,0 +1,16 @@
+{
+	"name": "kofe",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile-sass": "sass src/scss/main.scss src/css/main.css",
+		"watch-sass": "sass -w src/scss/main.scss src/css/main.css"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"sass": "^1.54.9"
+	}
+}
