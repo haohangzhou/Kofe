@@ -1,0 +1,6 @@
+@use '../variables' as *;
+.logo {
+	height: 5rem;
+	width: auto;
+	background-color: $primary;
+}
