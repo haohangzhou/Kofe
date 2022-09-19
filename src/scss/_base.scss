@@ -10,6 +10,10 @@
 	font-family: $font-family;
 }
 
+main {
+	height: 400vh;
+}
+
 @media screen and (min-width: $sm) {
 	:root {
 		font-size: 16px;
