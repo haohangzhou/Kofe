@@ -16,6 +16,8 @@ body {
 
 .icon_button {
   font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .container_lg {
@@ -81,6 +83,9 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.header_toolbar .button_menu {
+  color: #6c584c;
 }
 
 nav {

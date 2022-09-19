@@ -16,6 +16,10 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+
+	.button_menu {
+		color: $primary;
+	}
 }
 
 nav {
