@@ -40,6 +40,7 @@
   text-decoration: none;
   text-align: center;
   color: white;
+  font-weight: bold;
 }
 .nav_link a:active {
   color: white;
@@ -56,6 +57,7 @@
   }
   .nav_link a {
     color: #6c584c;
+    font-weight: 400;
   }
   .nav_link a:active {
     color: #6c584c;
@@ -104,7 +106,7 @@ nav {
   height: 50vh;
   min-height: 200px;
   max-height: 500px;
-  background-color: #6c584c;
+  background-color: rgba(108, 88, 76, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +166,8 @@ header .slide_down {
 .banner {
   height: calc(100vh - 5rem);
   width: 100vw;
-  background-image: url("../assets/images/banner_bg.jpeg");
+  background-image: url("../assets/images/banner_bg_sm.jpg");
+  background-size: cover;
   background-position: 20% center;
   background-repeat: no-repeat;
   z-index: -1;
@@ -196,6 +199,9 @@ header .slide_down {
 }
 
 @media screen and (min-width: 600px) {
+  .banner {
+    background-image: url("../assets/images/banner_bg_lg.jpeg");
+  }
   .banner_subtitle {
     font-size: 3rem;
   }

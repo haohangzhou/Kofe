@@ -3,7 +3,8 @@
 .banner {
 	height: calc(100vh - $header-size);
 	width: 100vw;
-	background-image: url('../assets/images/banner_bg.jpeg');
+	background-image: url('../assets/images/banner_bg_sm.jpg');
+	background-size: cover;
 	background-position: 20% center;
 	background-repeat: no-repeat;
 	z-index: -1;
@@ -36,6 +37,10 @@
 }
 
 @media screen and (min-width: $sm) {
+	.banner {
+		background-image: url('../assets/images/banner_bg_lg.jpeg');
+	}
+
 	.banner_subtitle {
 		font-size: 3rem;
 	}
