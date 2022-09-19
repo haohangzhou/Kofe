@@ -4,6 +4,11 @@ header {
 	width: 100vw;
 	height: 100px;
 	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+		100px 100px 80px rgba(0, 0, 0, 0.04);
 }
 
 .header_toolbar {
@@ -20,9 +25,11 @@ nav {
 	width: 100vw;
 	height: 50vh;
 	min-height: 200px;
-	max-width: 500px;
+	max-height: 500px;
 	background-color: $primary;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	transform-origin: top center;
 	transition: 0.3s;
 
@@ -34,27 +41,12 @@ nav {
 	}
 
 	ul {
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-evenly;
 		list-style: none;
-
-		li {
-			height: auto;
-		}
-
-		li > a {
-			display: inline-block;
-			width: 100vw;
-			text-align: center;
-			text-decoration: none;
-			color: white;
-
-			&:active {
-				color: white;
-			}
-		}
 	}
 }
 
@@ -66,4 +58,36 @@ header .hidden {
 // slide down on toggle
 header .slide_down {
 	transform: translateY(0%);
+}
+
+@media screen and (min-width: $sm) {
+	header .header_button {
+		display: none;
+	}
+
+	header .container_lg {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header nav {
+		position: static;
+		width: 60vw;
+		max-width: $sm;
+		min-height: 100%;
+		height: 100%;
+		background-color: white;
+
+		ul {
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
+
+	header .hidden {
+		transform: translateY(0);
+	}
 }
