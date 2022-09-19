@@ -4,12 +4,18 @@
   padding: 0;
 }
 
-body {
+:root {
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
 }
 
+@media screen and (min-width: 600px) {
+  :root {
+    font-size: 18px;
+  }
+}
 .logo {
-  height: 5rem;
+  height: 4.5rem;
   width: auto;
   background-color: #6c584c;
 }
@@ -70,8 +76,9 @@ body {
 }
 header {
   width: 100vw;
-  height: 100px;
-  position: fixed;
+  height: 5rem;
+  position: -webkit-sticky;
+  position: sticky;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,6 +158,44 @@ header .slide_down {
   }
   header .hidden {
     transform: translateY(0);
+  }
+}
+.banner {
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  background-image: url("../assets/images/banner_bg.jpeg");
+  background-position: 20% center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay_dark {
+  position: relative;
+}
+.overlay_dark::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner_subtitle {
+  z-index: 2;
+  display: inline-block;
+  color: white;
+  font-size: 2rem;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 600px) {
+  .banner_subtitle {
+    font-size: 3rem;
   }
 }
 

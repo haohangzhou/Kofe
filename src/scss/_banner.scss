@@ -1,0 +1,42 @@
+@use './variables/' as *;
+
+.banner {
+	height: calc(100vh - $header-size);
+	width: 100vw;
+	background-image: url('../assets/images/banner_bg.jpeg');
+	background-position: 20% center;
+	background-repeat: no-repeat;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.overlay_dark {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba($color: black, $alpha: 0.3);
+	}
+}
+
+.banner_subtitle {
+	z-index: 2;
+	display: inline-block;
+	color: white;
+	font-size: 2rem;
+	padding: 1rem;
+	text-transform: uppercase;
+}
+
+@media screen and (min-width: $sm) {
+	.banner_subtitle {
+		font-size: 3rem;
+	}
+}
