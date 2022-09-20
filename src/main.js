@@ -1,14 +1,10 @@
-// animate subtitle onload
-const banner_subtitles = document.querySelectorAll('.banner_subtitle');
-
-window.addEventListener('load', () => {
-	banner_subtitles.forEach((item) => {
-		fadeInAnimation(item);
-	});
-});
-
 function fadeInAnimation(element) {
 	element.classList.remove('transparent');
+}
+
+function toggleNav() {
+	const nav = document.querySelector('nav');
+	nav.classList.toggle('slide_down');
 }
 
 // toggle nav on mobile view
@@ -20,34 +16,26 @@ headerBtns.forEach((button) => {
 	});
 });
 
-function toggleNav() {
-	const nav = document.querySelector('nav');
-	nav.classList.toggle('slide_down');
-}
-
-// animate section titles and section images while in view
-const section_texts = document.querySelectorAll('.section_text');
-const section_images = document.querySelectorAll('.section_image');
-
+// fade in items when come in view
 const fadeInWhileInView = (entries) => {
 	entries.forEach((entry) => {
-		entry.target.classList.remove('transparent');
+		entry.isIntersecting && fadeInAnimation(entry.target);
 	});
 };
 
 const options = {
 	root: null,
 	rootMargin: '0px',
-	threshold: 0.2,
+	threshold: 0.2, //trigger when 20% of the element is in view
 };
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		entry.isIntersecting && fadeInAnimation(entry.target);
-	});
-}, options);
 
-const oberveItems = [...section_texts, ...section_images];
+const fadeInObserver = new IntersectionObserver(fadeInWhileInView, options);
 
-oberveItems.forEach((item) => {
-	observer.observe(item);
+const banner_subtitles = document.querySelectorAll('.banner_subtitle');
+const section_texts = document.querySelectorAll('.section_text');
+const section_images = document.querySelectorAll('.section_image');
+const fadeInItems = [...banner_subtitles, ...section_texts, ...section_images];
+
+fadeInItems.forEach((item) => {
+	fadeInObserver.observe(item);
 });
