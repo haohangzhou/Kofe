@@ -6,8 +6,12 @@
 }
 
 :root {
-	font-size: 14px;
+	font-size: 16px;
 	font-family: $font-family;
+}
+
+body {
+	overflow-x: hidden;
 }
 
 main {
@@ -16,6 +20,6 @@ main {
 
 @media screen and (min-width: $sm) {
 	:root {
-		font-size: 16px;
+		font-size: 18px;
 	}
 }

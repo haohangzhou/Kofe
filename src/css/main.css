@@ -5,8 +5,12 @@
 }
 
 :root {
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Montserrat", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 main {
@@ -15,7 +19,7 @@ main {
 
 @media screen and (min-width: 600px) {
   :root {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .logo {
@@ -81,6 +85,51 @@ main {
     color: white;
   }
 }
+.section_card {
+  padding: 2rem 0;
+  height: 50vh;
+  min-height: 500px;
+  max-height: 700px;
+}
+
+.section_content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section_text {
+  transition: 0.5s;
+}
+
+.section_title {
+  color: #e63946;
+  text-align: center;
+}
+.section_description {
+  margin: 1rem 0 0 0;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.section_image {
+  margin-top: 1rem;
+  flex-grow: 1;
+  display: inline-block;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  transition: 0.5s;
+}
+
+.transparent {
+  opacity: 0;
+  transform: translateY(10%);
+  transition: 0.5s;
+}
+
 header {
   width: 100vw;
   height: 5rem;
@@ -154,7 +203,7 @@ header .slide_down {
   }
   header nav {
     position: static;
-    width: 60vw;
+    width: 70vw;
     max-width: 600px;
     min-height: 100%;
     height: 100%;
