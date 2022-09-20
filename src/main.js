@@ -41,16 +41,45 @@ fadeInItems.forEach((item) => {
 	fadeInObserver.observe(item);
 });
 
-// animate marquee text
-const marquee = document.querySelector('.marquee');
+// scroll base animation
+
+const marquee_text = document.querySelector('.marquee');
+
 window.addEventListener('scroll', () => {
 	let pageOffset = window.scrollY;
-	let pos = pageOffset * 0.2 * 2;
-	let isVisible =
-		window.innerHeight - marquee.getBoundingClientRect().top > 0 &&
-		marquee.getBoundingClientRect().top > 0;
 
-	if (isVisible) {
-		marquee.style.transform = `translateX(${pos}px)`;
+	const isVisible = (element) => {
+		let isVisible =
+			window.innerHeight - element.getBoundingClientRect().top > 0 &&
+			element.getBoundingClientRect().top > 0;
+		return isVisible;
+	};
+
+	// animate marques
+	let pos = pageOffset * 0.2 * 2;
+
+	if (isVisible(marquee_text)) {
+		marquee_text.style.transform = `translateX(${pos}px)`;
 	}
 });
+
+// animate emphasize text
+const conceal_text = document.querySelectorAll('.conceal');
+
+let isIntersecting = null;
+
+const watchForText = new IntersectionObserver(
+	(entries) => {
+		entries.forEach((entry) => {
+			entry.isIntersecting &&
+				conceal_text.forEach((text) => text.classList.add('conceal_animation'));
+		});
+	},
+	{
+		root: null,
+		rootMargin: '0px',
+		threshold: 1,
+	}
+);
+
+watchForText.observe(section_texts[0]);
