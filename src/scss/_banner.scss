@@ -3,6 +3,8 @@
 .banner {
 	height: calc(100vh - $header-size);
 	width: 100vw;
+	max-width: $xl;
+	margin: 0 auto;
 	background-image: url('../assets/images/banner_bg_sm.jpg');
 	background-size: cover;
 	background-position: 20% center;
@@ -36,6 +38,7 @@
 .banner_subtitle {
 	display: inline-block;
 	color: white;
+	background-color: $primary;
 	font-size: 2rem;
 	padding: 1rem;
 	text-transform: uppercase;

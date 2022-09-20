@@ -35,7 +35,22 @@ const banner_subtitles = document.querySelectorAll('.banner_subtitle');
 const section_texts = document.querySelectorAll('.section_text');
 const section_images = document.querySelectorAll('.section_image');
 const fadeInItems = [...banner_subtitles, ...section_texts, ...section_images];
+// const fadeInItems = document.querySelectorAll('.transparent');
 
 fadeInItems.forEach((item) => {
 	fadeInObserver.observe(item);
+});
+
+// animate marquee text
+const marquee = document.querySelector('.marquee');
+window.addEventListener('scroll', () => {
+	let pageOffset = window.scrollY;
+	let pos = pageOffset * 0.2 * 2;
+	let isVisible =
+		window.innerHeight - marquee.getBoundingClientRect().top > 0 &&
+		marquee.getBoundingClientRect().top > 0;
+
+	if (isVisible) {
+		marquee.style.transform = `translateX(${pos}px)`;
+	}
 });

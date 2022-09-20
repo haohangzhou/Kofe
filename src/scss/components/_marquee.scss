@@ -1,0 +1,26 @@
+@use '../variables' as *;
+
+$heading: #b0cafd;
+
+.marquee_container {
+	margin: 2rem auto;
+	position: relative;
+	width: 100vw;
+	height: 5rem;
+	overflow-x: hidden;
+	max-width: $xl;
+}
+
+.marquee {
+	position: absolute;
+	display: flex;
+	white-space: nowrap;
+	top: 0;
+	transform: translateY(-50%);
+	left: -100%;
+	h1 {
+		font-size: 4rem;
+		color: $heading;
+		margin-left: 1ch;
+	}
+}

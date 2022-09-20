@@ -5,6 +5,7 @@
 	cursor: pointer;
 	a {
 		text-decoration: none;
+		text-transform: uppercase;
 		text-align: center;
 		color: $primary;
 		&:active {
@@ -34,23 +35,33 @@
 
 	// the last button
 	.nav_link_button {
-		background-color: $primary;
-		border-radius: 200px;
+		// background-color: $primary;
+		// border-radius: 200px;
+		border: 2px solid $primary;
 		transition: 0.3s;
+		position: relative;
 
 		&:active {
 			transform: scale(0.97);
 		}
 
-		&:hover {
-			background-color: $secondary;
-			a {
-				color: white;
-			}
+		::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 0%;
+			background-color: $primary;
+		}
+
+		&:hover ::after {
+			-webkit-animation: fill-button 0.3s forwards;
+			animation: fill-button 0.3s forwards;
 		}
 
 		a {
-			color: white;
+			color: $primary;
 		}
 	}
 }
