@@ -6,10 +6,9 @@
 	a {
 		text-decoration: none;
 		text-align: center;
-		color: white;
-		font-weight: bold;
+		color: $primary;
 		&:active {
-			color: white;
+			color: $primary;
 		}
 	}
 }
@@ -38,6 +37,10 @@
 		background-color: $primary;
 		border-radius: 200px;
 		transition: 0.3s;
+
+		&:active {
+			transform: scale(0.97);
+		}
 
 		&:hover {
 			background-color: $secondary;

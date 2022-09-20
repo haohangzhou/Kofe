@@ -5,6 +5,7 @@ header {
 	height: $header-size;
 	position: -webkit-sticky;
 	position: sticky;
+	z-index: 2;
 	top: 0;
 	left: 0;
 	background-color: white;
@@ -22,7 +23,7 @@ header {
 	align-items: center;
 
 	.button_menu {
-		color: $primary;
+		color: black;
 	}
 }
 
@@ -34,7 +35,8 @@ nav {
 	height: 50vh;
 	min-height: 200px;
 	max-height: 500px;
-	background-color: rgba($color: $primary, $alpha: 0.95);
+	background-color: $bg-color;
+	// background-color: rgba($color: $primary, $alpha: 0.95);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -45,7 +47,7 @@ nav {
 		position: absolute;
 		top: 1rem;
 		right: 1rem;
-		color: white;
+		color: black;
 	}
 
 	ul {
