@@ -1,0 +1,59 @@
+@use '../variables' as *;
+
+.nav_link {
+	padding: 1rem 1.5rem;
+	cursor: pointer;
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		text-align: center;
+		color: $primary;
+		&:active {
+			color: $primary;
+		}
+	}
+}
+
+@media screen and (min-width: $sm) {
+	.nav_link {
+		cursor: pointer;
+		position: relative;
+		transition: 0.3s;
+
+		&:hover a {
+			color: $secondary;
+		}
+
+		a {
+			color: $primary;
+			font-weight: 400;
+			&:active {
+				color: $primary;
+			}
+		}
+	}
+
+	// the last button
+	.nav_link_button {
+		// background-color: $primary;
+		// border-radius: 200px;
+		border: 2px solid $primary;
+		transition: 0.3s;
+		position: relative;
+
+		&:active {
+			transform: scale(0.97);
+		}
+
+		&:hover {
+			background-color: $primary;
+			a {
+				color: white;
+			}
+		}
+
+		a {
+			color: $primary;
+		}
+	}
+}

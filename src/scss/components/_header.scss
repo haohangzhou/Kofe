@@ -1,0 +1,103 @@
+@use '../variables' as *;
+
+header {
+	width: 100vw;
+	height: $headerSize;
+	position: -webkit-sticky;
+	position: sticky;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+		100px 100px 80px rgba(0, 0, 0, 0.04);
+}
+
+.header_toolbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	.button_menu {
+		color: black;
+	}
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 50vh;
+	min-height: 200px;
+	max-height: 500px;
+	background-color: $bg-color;
+	// background-color: rgba($color: $primary, $alpha: 0.95);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin: top center;
+	transition: 0.3s;
+
+	.button_close {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		color: black;
+	}
+
+	ul {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		list-style: none;
+	}
+}
+
+// hide the nav by default
+header .hidden {
+	transform: translateY(-100%);
+}
+
+// slide down on toggle
+header .slide_down {
+	transform: translateY(0%);
+}
+
+@media screen and (min-width: $sm) {
+	header .header_button {
+		display: none;
+	}
+
+	header .container_lg {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header nav {
+		position: static;
+		width: 70vw;
+		max-width: $sm;
+		min-height: 100%;
+		height: 100%;
+		background-color: white;
+
+		ul {
+			width: 100%;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+	}
+
+	header .hidden {
+		transform: translateY(0);
+	}
+}

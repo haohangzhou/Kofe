@@ -1,0 +1,13 @@
+@use '../variables' as *;
+
+.container_lg {
+	margin: 0 auto;
+	width: 90%;
+	max-width: $lg;
+}
+
+.container_md {
+	margin: 0 auto;
+	width: 90%;
+	max-width: $md;
+}

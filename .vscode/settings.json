@@ -1,0 +1,7 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"html.format.enable": false,
+	"[svg]": {
+		"editor.defaultFormatter": "jock.svg"
+	}
+}

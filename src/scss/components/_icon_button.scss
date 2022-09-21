@@ -1,0 +1,7 @@
+@use '../variables' as *;
+
+.icon_button {
+	font-size: $h1;
+	padding: 1rem;
+	cursor: pointer;
+}
