@@ -1,0 +1,62 @@
+@use '../variables/' as *;
+
+@mixin input {
+	font-family: $secondary-font;
+	letter-spacing: 2px;
+	font-size: $h2;
+	color: $primary;
+}
+
+.form_container {
+	background-color: $primary;
+	color: white;
+	padding: 2rem 0;
+}
+
+form {
+	height: calc(100vh - $headerSize);
+	min-height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.form_row {
+	display: flex;
+	flex-direction: column;
+}
+
+.form_label {
+	width: 100%;
+	font-size: $h1;
+	text-transform: uppercase;
+}
+
+.form_input {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.5rem 1rem;
+}
+
+input[type='text'] {
+	@include input();
+}
+
+input[type='number'] {
+	@include input();
+}
+
+input[type='datetime-local'] {
+	@include input();
+}
+
+.form_button {
+	margin-top: 2rem;
+	padding: 1rem 2rem;
+	width: 100%;
+	color: $primary;
+	font-size: $h3;
+	font-family: $secondary-font;
+	text-transform: uppercase;
+	text-align: center;
+}

@@ -1,12 +1,39 @@
 let pageOffset;
 const parallax_items = document.querySelectorAll('.parallax');
 const marquee_texts = document.querySelectorAll('.marquee');
-const headerBtns = document.querySelectorAll('.header_button');
+const header_buttons = document.querySelectorAll('.header_button');
 const banner_subtitles = document.querySelectorAll('.banner_subtitle');
 const section_texts = document.querySelectorAll('.section_text');
 const section_images = document.querySelectorAll('.section_image');
-const fadeInItems = [...banner_subtitles, ...section_texts, ...section_images];
+const fadein_items = [...banner_subtitles, ...section_texts, ...section_images];
 const conceal_text = document.querySelectorAll('.conceal');
+const menu_button = document.querySelector('#menu_button');
+const menu_section = document.querySelector('#menu_section');
+const book_button = document.querySelector('.nav_link_button');
+const book_form = document.querySelector('.form_container');
+const home_button = document.querySelector('.home_button');
+
+home_button.addEventListener('click', (e) => {
+	e.preventDefault();
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+});
+
+book_button.addEventListener('click', (e) => {
+	e.preventDefault();
+	book_form.scrollIntoView({
+		behavior: 'smooth',
+	});
+});
+
+menu_button.addEventListener('click', (e) => {
+	e.preventDefault();
+	menu_section.scrollIntoView({
+		behavior: 'smooth',
+	});
+});
 
 const options = {
 	root: null,
@@ -20,7 +47,7 @@ const toggleNav = () => {
 	nav.classList.toggle('slide_down');
 };
 
-headerBtns.forEach((button) => {
+header_buttons.forEach((button) => {
 	button.addEventListener('click', () => {
 		toggleNav();
 	});
@@ -41,7 +68,7 @@ const fadeInObserver = new IntersectionObserver(fadeInWhileInView, options);
 
 // const fadeInItems = document.querySelectorAll('.transparent');
 
-fadeInItems.forEach((item) => {
+fadein_items.forEach((item) => {
 	fadeInObserver.observe(item);
 });
 

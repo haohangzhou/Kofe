@@ -28,8 +28,10 @@
 						<i class="fa-sharp fa-solid fa-xmark"></i>
 					</span>
 					<ul>
-						<li class="nav_link"><a href="index.html">Home</a></li>
-						<li class="nav_link"><a href="#">Menu</a></li>
+						<li class="nav_link home_button">
+							<a href="index.html">Home</a>
+						</li>
+						<li class="nav_link" id="menu_button"><a href="#">Menu</a></li>
 						<li class="nav_link nav_link_button"><a href="#">Book Now</a></li>
 					</ul>
 				</nav>
@@ -106,7 +108,7 @@
 			</section>
 			<!-- menu section -->
 			<div class="marquee_container">
-				<div class="marquee">
+				<div class="marquee" id="menu_section">
 					<h1>Kofe | Menu</h1>
 					<h1>Kofe | Menu</h1>
 					<h1>Kofe | Menu</h1>
@@ -191,6 +193,52 @@
 					</div>
 				</div>
 			</section>
+
+			<!-- booking form -->
+			<div class="marquee_container">
+				<div class="marquee" id="menu_section">
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+					<h1>Kofe | Booking</h1>
+				</div>
+			</div>
+			<div class="form_container">
+				<div class="container_md">
+					<form>
+						<div class="form_row">
+							<label class="form_label" for="name">name</label>
+							<input class="form_input" type="text" name="name" id="name" />
+						</div>
+						<div class="form_row">
+							<label class="form_label" for="people">No. People</label>
+							<input
+								class="form_input"
+								type="number"
+								name="people"
+								id="people"
+							/>
+						</div>
+						<div class="form_row">
+							<label class="form_label" for="dateTime">date & time</label>
+							<input
+								class="form_input"
+								type="datetime-local"
+								name="numOfPeople"
+								id="numOfPeople"
+							/>
+						</div>
+						<div class="form_row button_row">
+							<button class="form_button" type="button">submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</main>
 		<footer></footer>
 	</body>

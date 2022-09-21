@@ -1,7 +1,7 @@
 @use '../variables/' as *;
 
 .banner {
-	height: calc(100vh - $header-size);
+	height: calc(100vh - $headerSize);
 	width: 100vw;
 	max-width: $xl;
 	margin: 0 auto;
