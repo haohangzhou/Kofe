@@ -1,4 +1,4 @@
-@use './variables/' as *;
+@use '../variables/' as *;
 
 .banner {
 	height: calc(100vh - $header-size);
