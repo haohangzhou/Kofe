@@ -11,13 +11,14 @@ const menu_button = document.querySelector('#menu_button');
 const menu_section = document.querySelector('#menu_section');
 const book_button = document.querySelector('.nav_link_button');
 const book_form = document.querySelector('.form_container');
-const home_button = document.querySelector('.home_button');
-
-home_button.addEventListener('click', (e) => {
-	e.preventDefault();
-	window.scrollTo({
-		top: 0,
-		behavior: 'smooth',
+const scroll_top_buttons = document.querySelectorAll('.scroll-to-top');
+scroll_top_buttons.forEach((item) => {
+	item.addEventListener('click', (e) => {
+		e.preventDefault();
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
 	});
 });
 
