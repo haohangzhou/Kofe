@@ -1,11 +1,6 @@
 @use '../variables' as *;
 $faded: #9c9c9c;
 
-.section_card {
-	// padding: 2rem 0;
-	min-height: 500px;
-}
-
 .section_content {
 	height: 100%;
 	display: flex;
@@ -13,7 +8,12 @@ $faded: #9c9c9c;
 }
 
 .section_text {
-	transition: 0.5s;
+	transition: $powerful;
+}
+
+.section_heading {
+	text-align: center;
+	color: $primary;
 }
 
 .section_title {
@@ -47,7 +47,7 @@ $faded: #9c9c9c;
 
 .conceal_animation {
 	-webkit-animation: reveal 0.8s forwards;
-	animation: reveal 0.8s forwards;
+	animation: reveal $powerful forwards;
 }
 
 @-webkit-keyframes reveal {
@@ -97,12 +97,13 @@ $faded: #9c9c9c;
 // }
 
 .section_image_container {
-	margin-top: 2rem;
+	margin: 2rem auto 0 auto;
 	aspect-ratio: 4 / 3;
 	height: auto;
 	width: 100%;
+	max-width: 700px;
 	overflow: hidden;
-	transition: 0.3s;
+	transition: $powerful;
 }
 
 .section_image {
@@ -112,7 +113,7 @@ $faded: #9c9c9c;
 	object-fit: cover;
 	-o-object-position: center center;
 	object-position: center center;
-	transition: 0.5s;
+	transition: $powerful;
 }
 
 .enlarge {

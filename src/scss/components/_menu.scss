@@ -1,0 +1,33 @@
+@use '../variables/' as *;
+
+.section_menu {
+	font-family: $secondary-font;
+}
+
+.menu_category_container {
+	height: 50vh;
+	min-height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.menu_category_name {
+	text-align: center;
+	border-bottom: 1px solid $primary;
+}
+
+.menu_row {
+	display: flex;
+	justify-content: space-between;
+	text-transform: uppercase;
+}
+
+@media screen and (min-width: $md) {
+	.section_menu {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		-moz-column-gap: 2rem;
+		column-gap: 2rem;
+	}
+}

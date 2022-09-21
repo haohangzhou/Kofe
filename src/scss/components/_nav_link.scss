@@ -45,19 +45,11 @@
 			transform: scale(0.97);
 		}
 
-		::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 0%;
+		&:hover {
 			background-color: $primary;
-		}
-
-		&:hover ::after {
-			-webkit-animation: fill-button 0.3s forwards;
-			animation: fill-button 0.3s forwards;
+			a {
+				color: white;
+			}
 		}
 
 		a {

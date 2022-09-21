@@ -1,14 +1,24 @@
-function fadeInAnimation(element) {
-	element.classList.remove('transparent');
-}
+let pageOffset;
+const parallax_items = document.querySelectorAll('.parallax');
+const marquee_texts = document.querySelectorAll('.marquee');
+const headerBtns = document.querySelectorAll('.header_button');
+const banner_subtitles = document.querySelectorAll('.banner_subtitle');
+const section_texts = document.querySelectorAll('.section_text');
+const section_images = document.querySelectorAll('.section_image');
+const fadeInItems = [...banner_subtitles, ...section_texts, ...section_images];
+const conceal_text = document.querySelectorAll('.conceal');
 
-function toggleNav() {
-	const nav = document.querySelector('nav');
-	nav.classList.toggle('slide_down');
-}
+const options = {
+	root: null,
+	rootMargin: '0px',
+	threshold: 0.2, //trigger when 20% of the element is in view
+};
 
 // toggle nav on mobile view
-const headerBtns = document.querySelectorAll('.header_button');
+const toggleNav = () => {
+	const nav = document.querySelector('nav');
+	nav.classList.toggle('slide_down');
+};
 
 headerBtns.forEach((button) => {
 	button.addEventListener('click', () => {
@@ -17,24 +27,18 @@ headerBtns.forEach((button) => {
 });
 
 // fade in items when come in view
+function fadeInAnimation(element) {
+	element.classList.remove('transparent');
+}
+
 const fadeInWhileInView = (entries) => {
 	entries.forEach((entry) => {
 		entry.isIntersecting && fadeInAnimation(entry.target);
 	});
 };
 
-const options = {
-	root: null,
-	rootMargin: '0px',
-	threshold: 0.2, //trigger when 20% of the element is in view
-};
-
 const fadeInObserver = new IntersectionObserver(fadeInWhileInView, options);
 
-const banner_subtitles = document.querySelectorAll('.banner_subtitle');
-const section_texts = document.querySelectorAll('.section_text');
-const section_images = document.querySelectorAll('.section_image');
-const fadeInItems = [...banner_subtitles, ...section_texts, ...section_images];
 // const fadeInItems = document.querySelectorAll('.transparent');
 
 fadeInItems.forEach((item) => {
@@ -42,11 +46,15 @@ fadeInItems.forEach((item) => {
 });
 
 // scroll base animation
-
-const marquee_text = document.querySelector('.marquee');
+const parallax = (element) => {
+	const speed = element.dataset.speed;
+	const speed_modifier = 0.15;
+	let pos = pageOffset * speed_modifier * speed;
+	element.style.transform = `translateY(-${pos}%)`;
+};
 
 window.addEventListener('scroll', () => {
-	let pageOffset = window.scrollY;
+	pageOffset = window.scrollY;
 
 	const isVisible = (element) => {
 		let isVisible =
@@ -54,18 +62,25 @@ window.addEventListener('scroll', () => {
 			element.getBoundingClientRect().top > 0;
 		return isVisible;
 	};
+	// animate banner text
+	parallax_items.forEach((item) => {
+		let y = window.innerHeight - item.getBoundingClientRect().top;
+		if (y > 0) {
+			parallax(item);
+		}
+	});
 
 	// animate marques
-	let pos = pageOffset * 0.2 * 2;
+	let marquee_pos = pageOffset * 0.2 * 2;
 
-	if (isVisible(marquee_text)) {
-		marquee_text.style.transform = `translateX(${pos}px)`;
-	}
+	marquee_texts.forEach((text) => {
+		if (isVisible(text)) {
+			text.style.transform = `translateX(${marquee_pos}px)`;
+		}
+	});
 });
 
 // animate emphasize text
-const conceal_text = document.querySelectorAll('.conceal');
-
 let isIntersecting = null;
 
 const watchForText = new IntersectionObserver(

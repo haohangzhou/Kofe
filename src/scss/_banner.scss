@@ -5,9 +5,9 @@
 	width: 100vw;
 	max-width: $xl;
 	margin: 0 auto;
-	background-image: url('../assets/images/banner_bg_sm.jpg');
+	background-image: url('../assets/images/coffee.jpg');
 	background-size: cover;
-	background-position: 20% center;
+	background-position: center center;
 	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
@@ -24,7 +24,7 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-color: rgba($color: black, $alpha: 0.3);
+		// background-color: rgba($color: black, $alpha: 0.3);
 	}
 }
 
@@ -33,12 +33,12 @@
 	z-index: 1;
 	flex-direction: column;
 	justify-content: center;
+	mix-blend-mode: difference;
 }
 
 .banner_subtitle {
 	display: inline-block;
-	color: white;
-	background-color: $primary;
+	color: $primary;
 	font-size: 2rem;
 	padding: 1rem;
 	text-transform: uppercase;
@@ -54,7 +54,7 @@
 
 @media screen and (min-width: $sm) {
 	.banner {
-		background-image: url('../assets/images/banner_bg_lg.jpeg');
+		background-image: url('../assets/images/coffee.jpg');
 	}
 
 	.banner_subtitle {
