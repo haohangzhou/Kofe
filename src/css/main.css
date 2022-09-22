@@ -17,7 +17,6 @@ body {
 
 main {
   background-color: #f9f9fa;
-  height: 400vh;
 }
 
 @media screen and (min-width: 600px) {
@@ -29,6 +28,7 @@ main {
   height: 4.5rem;
   width: auto;
   background-color: #2e6cb0;
+  aspect-ratio: 1/1;
 }
 
 .icon_button {
@@ -79,12 +79,11 @@ main {
   text-transform: uppercase;
   transition: 1s;
   opacity: 1;
-  transform: translateY(0%);
 }
 
 .banner .transparent {
   opacity: 0;
-  transform: translateY(10%);
+  transform: translateY(30%);
 }
 
 @media screen and (min-width: 600px) {
@@ -340,6 +339,12 @@ header {
   justify-content: center;
   align-items: center;
   box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.02), 100px 100px 80px rgba(0, 0, 0, 0.04);
+  transition: 1s cubic-bezier(0.7, -0.01, 0.13, 0.99);
+}
+
+.collaps {
+  transition: 1s cubic-bezier(0.7, -0.01, 0.13, 0.99);
+  top: -100%;
 }
 
 .header_toolbar {
@@ -478,6 +483,55 @@ input[type=datetime-local] {
   font-family: "IBM Plex Serif", serif;
   text-transform: uppercase;
   text-align: center;
+}
+
+.footer_container {
+  background-color: white;
+}
+
+.footer_container .container_lg {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.footer_address {
+  color: #2e6cb0;
+  font-size: 0.8rem;
+}
+
+.footer_trading_hours {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #2e6cb0;
+}
+
+.footer_list_container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer_list_container li {
+  list-style: none;
+  font-size: 1rem;
+}
+.footer_list_container li a {
+  text-decoration: none;
+  color: #6d7482;
+}
+
+@media screen and (min-width: 900px) {
+  .footer_address,
+.footer_trading_hours {
+    font-size: 1.5rem;
+  }
+  .footer_list_container a {
+    font-size: 1.25rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
