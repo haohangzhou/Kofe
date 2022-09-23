@@ -3,6 +3,7 @@ import {
 	scrollTo,
 	fadeIn,
 	parallax,
+	marquee,
 } from './modules/animations.js';
 import { MD } from './modules/constants.js';
 // nodes
@@ -12,6 +13,8 @@ const book_form = document.querySelector('.form_container');
 const conceal_text = document.querySelectorAll('.conceal');
 const header = document.querySelector('header');
 const header_buttons = document.querySelectorAll('.header_button');
+const nav = document.querySelector('nav');
+const nav_links = document.querySelectorAll('.nav_link');
 const marquee_texts = document.querySelectorAll('.marquee');
 const menu_button = document.querySelector('#menu_button');
 const menu_section = document.querySelector('#menu_section');
@@ -31,8 +34,14 @@ scrollTo(menu_button, menu_section);
 // toggle nav on mobile view
 header_buttons.forEach((button) => {
 	button.addEventListener('click', () => {
-		const nav = document.querySelector('nav');
 		nav.classList.toggle('slide_down');
+	});
+});
+
+//close menu after click on the link
+nav_links.forEach((link) => {
+	link.addEventListener('click', () => {
+		nav.classList.remove('slide_down');
 	});
 });
 
@@ -73,8 +82,6 @@ window.addEventListener('scroll', () => {
 		y > 0 && parallax(item, pageOffset);
 	});
 
-	// marquee texts
-	let marquee_pos = pageOffset * 0.2 * 2;
 	const isInView = (element) => {
 		let isVisible =
 			window.innerHeight - element.getBoundingClientRect().top > 0 &&
@@ -83,7 +90,7 @@ window.addEventListener('scroll', () => {
 	};
 
 	marquee_texts.forEach((text) => {
-		isInView(text) && (text.style.transform = `translateX(${marquee_pos}px)`);
+		isInView(text) && marquee(text, pageOffset);
 	});
 });
 
