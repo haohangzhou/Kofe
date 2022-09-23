@@ -474,6 +474,17 @@ input[type=datetime-local] {
   color: #2e6cb0;
 }
 
+input[type=email] {
+  font-family: "IBM Plex Serif", serif;
+  letter-spacing: 2px;
+  font-size: 1.75rem;
+  color: #2e6cb0;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
 .form_button {
   margin-top: 2rem;
   padding: 1rem 2rem;

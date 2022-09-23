@@ -41,6 +41,7 @@
 				</nav>
 			</div>
 		</header>
+
 		<main>
 			<!-- banner -->
 			<div class="banner overlay_dark">
@@ -226,6 +227,7 @@
 								type="number"
 								name="people"
 								id="people"
+								min="1"
 							/>
 						</div>
 						<div class="form_row">
@@ -237,8 +239,12 @@
 								id="numOfPeople"
 							/>
 						</div>
+						<div class="form_row">
+							<label class="form_label" for="email">email</label>
+							<input class="form_input" type="email" name="email" id="email" />
+						</div>
 						<div class="form_row button_row">
-							<button class="form_button" type="button">submit</button>
+							<button class="form_button" type="submit">submit</button>
 						</div>
 					</form>
 				</div>
@@ -255,6 +261,7 @@
 				></lottie-player>
 			</div>
 		</main>
+
 		<footer class="footer_container">
 			<div class="container_lg">
 				<div class="logo">

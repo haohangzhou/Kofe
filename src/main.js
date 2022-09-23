@@ -110,3 +110,9 @@ const watchForText = new IntersectionObserver(
 );
 
 watchForText.observe(section_texts[0]);
+
+// form handling
+const submit_button = document.querySelector('.form_button');
+submit_button.addEventListener('click', (e) => {
+	e.preventDefault();
+});
