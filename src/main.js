@@ -19,6 +19,7 @@ const parallax_items = document.querySelectorAll('.parallax');
 const scroll_top_buttons = document.querySelectorAll('.scroll-to-top');
 const section_images = document.querySelectorAll('.section_image');
 const section_texts = document.querySelectorAll('.section_text');
+const sticky_button = document.querySelector('.sticky_button');
 
 scroll_top_buttons.forEach((item) => {
 	scrollToTop(item);
@@ -59,10 +60,12 @@ fadein_items.forEach((item) => {
 window.addEventListener('scroll', () => {
 	let pageOffset = window.scrollY;
 
-	// auto hide header on medium screen and scroll more than 200 px
-	const hideThreshold = 200;
+	// auto hide header and sticky button on medium screen and scroll more than 200 px
+	const hideThreshold = 300;
+	console.log(pageOffset > hideThreshold);
 	window.innerWidth >= MD &&
 		header.classList.toggle('collaps', pageOffset > hideThreshold);
+	sticky_button.classList.toggle('hidden', pageOffset < hideThreshold);
 
 	// parallax banner text
 	parallax_items.forEach((item) => {
