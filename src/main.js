@@ -71,7 +71,6 @@ window.addEventListener('scroll', () => {
 
 	// auto hide header and sticky button on medium screen and scroll more than 200 px
 	const hideThreshold = 300;
-	console.log(pageOffset > hideThreshold);
 	window.innerWidth >= MD &&
 		header.classList.toggle('collaps', pageOffset > hideThreshold);
 	sticky_button.classList.toggle('hidden', pageOffset < hideThreshold);

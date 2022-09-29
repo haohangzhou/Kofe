@@ -34,8 +34,5 @@ export const marquee = (element, pageOffset) => {
 	const verticalPercentage =
 		element.getBoundingClientRect().top / window.innerHeight;
 	const xPos = (1 - verticalPercentage) * 100 * 10 * 0.5;
-	console.log('element: ', element);
-	console.log('verticalPercentage: ', verticalPercentage);
-	console.log('xPos: ', xPos);
 	element.style.transform = `translateX(${xPos}px)`;
 };
